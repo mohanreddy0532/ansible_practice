@@ -7,5 +7,5 @@
 
     - name: task2
       yum:
-      name: yum
-      state: installed
+        name: yum
+        state: installed
