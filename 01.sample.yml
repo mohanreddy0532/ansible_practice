@@ -1,3 +1,6 @@
 - name: Sample Play for ansible
-  ansible.builtin.debug:
-    msg: "Hello ansible"
+  hosts: all
+  tasks:
+    - name: Task1
+      ansible.builtin.debug:
+        msg: Hello Ansible for a task
