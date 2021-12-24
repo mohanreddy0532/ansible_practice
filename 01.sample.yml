@@ -4,3 +4,8 @@
     - name: Task1
       ansible.builtin.debug:
         msg: Hello Ansible for a task
+
+    - name: task2
+      yum:
+      name: yum
+      state: installed
