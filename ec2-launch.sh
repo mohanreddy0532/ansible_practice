@@ -23,7 +23,7 @@ aws ec2 run-instances --launch-template LaunchTemplateId=${TEMP_ID},Version=${TE
 
 fi
 
-slepp 10
+sleep 10
 
 #DNS Update
 IPADDRESS=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=frontend" | jq .Reservations[].Instances[].PrivateIpAddress | sed 's/"//g' | grep -v null)
