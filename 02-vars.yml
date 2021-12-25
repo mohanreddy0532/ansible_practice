@@ -18,16 +18,23 @@
 #      ansible.builtin.debug:
 #        msg: URL - {{URL}}
 
-- name: Play for Tasks Level Variables
+#- name: Play for Tasks Level Variables
+#  hosts: all
+#  tasks:
+#    - name: Print URL1
+#      ansible.builtin.debug:
+#        msg: URL - {{URL}}
+#      vars:
+#        URL: tasks.example.com
+#    - name: Print URL2
+#      ansible.builtin.debug:
+#        msg: URL - {{URL}}
+#      vars:
+#        URL: second-task.example.com
+
+- name: Play for inventory Variables
   hosts: all
   tasks:
     - name: Print URL1
       ansible.builtin.debug:
         msg: URL - {{URL}}
-      vars:
-        URL: tasks.example.com
-    - name: Print URL2
-      ansible.builtin.debug:
-        msg: URL - {{URL}}
-      vars:
-        URL: second-task.example.com
