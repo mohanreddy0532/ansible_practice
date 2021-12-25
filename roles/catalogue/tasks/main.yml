@@ -30,7 +30,7 @@
 - name: Install NodeJS dependencies
   community.general.npm:
     path: /home/roboshop/catalogue
-  become_user:
+  become_user: roboshop
 
 - name: Update Catalogue Systemd file
   ansible.builtin.templates:
