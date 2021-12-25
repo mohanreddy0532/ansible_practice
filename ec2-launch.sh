@@ -31,15 +31,16 @@ fi
 sleep 10
 
 #DNS Update
-IPADDRESS=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=${COMPONENT}" | jq .Reservations[].Instances[].PrivateIpAddress | sed 's/"//g' | grep -v null)
+  IPADDRESS=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=${COMPONENT}" | jq .Reservations[].Instances[].PrivateIpAddress | sed 's/"//g' | grep -v null)
 
-sed -e "s/IPADDRESS/${IPADDRESS}/" -e "s/COMPONENT/${COMPONENT}/" record.json >/tmp/record.json
-aws route53 change-resource-record-sets --hosted-zone-id ${ZONE_ID} --change-batch file:///tmp/record.json | jq
+  # Update the DNS record
+  sed -e "s/IPADDRESS/${IPADDRESS}/" -e "s/COMPONENT/${COMPONENT}/" record.json >/tmp/record.json
+  aws route53 change-resource-record-sets --hosted-zone-id ${ZONE_ID} --change-batch file:///tmp/record.json | jq
 }
 
 if [ "$COMPONENT" == "all" ]; then
-  for comp in frontend$ENV mongodb$ENV catalogue$ENV ; do
-    COMPONENT=$comp
+  for comp in frontend mongodb catalogue redis user cart mysql shipping rabbitmq payment dispatch ; do
+    COMPONENT=$comp$ENV
     CREATE_INSTANCE
   done
 else
