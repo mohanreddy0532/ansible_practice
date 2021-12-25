@@ -1,50 +1,50 @@
-- name: Play level vaiables
-  hosts: all
-  vars:
-    URL: google.com
-  tasks:
-    - name: print a value
-      ansible.builtin.debug:
-        msg: URL - {{URL}}
-
-#Since it is a play level variable all tasks can access
-
-- name: Play for variable files
-  hosts: all
-  vars_files:
-    - sample-vars.yml
-  tasks:
-    - name: Print URL
-      ansible.builtin.debug:
-        msg: URL - {{URL}}
-
-- name: Play for Tasks Level Variables
-  hosts: all
-  tasks:
-    - name: Print URL1
-      ansible.builtin.debug:
-        msg: URL - {{URL}}
-      vars:
-        URL: tasks.example.com
-    - name: Print URL2
-      ansible.builtin.debug:
-        msg: URL - {{URL}}
-      vars:
-        URL: second-task.example.com
-
-- name: Play for inventory Variables
-  hosts: all
-  tasks:
-    - name: Print URL1
-      ansible.builtin.debug:
-        msg: URL - {{URL}}
-
-- name: Play for Command level Variables
-  hosts: all
-  tasks:
-    - name: Print URL1
-      ansible.builtin.debug:
-        msg: URL - {{URL}}
+#- name: Play level vaiables
+#  hosts: all
+#  vars:
+#    URL: google.com
+#  tasks:
+#    - name: print a value
+#      ansible.builtin.debug:
+#        msg: URL - {{URL}}
+#
+##Since it is a play level variable all tasks can access
+#
+#- name: Play for variable files
+#  hosts: all
+#  vars_files:
+#    - sample-vars.yml
+#  tasks:
+#    - name: Print URL
+#      ansible.builtin.debug:
+#        msg: URL - {{URL}}
+#
+#- name: Play for Tasks Level Variables
+#  hosts: all
+#  tasks:
+#    - name: Print URL1
+#      ansible.builtin.debug:
+#        msg: URL - {{URL}}
+#      vars:
+#        URL: tasks.example.com
+#    - name: Print URL2
+#      ansible.builtin.debug:
+#        msg: URL - {{URL}}
+#      vars:
+#        URL: second-task.example.com
+#
+#- name: Play for inventory Variables
+#  hosts: all
+#  tasks:
+#    - name: Print URL1
+#      ansible.builtin.debug:
+#        msg: URL - {{URL}}
+#
+#- name: Play for Command level Variables
+#  hosts: all
+#  tasks:
+#    - name: Print URL1
+#      ansible.builtin.debug:
+#        msg: URL - {{URL}}
 
 - name: Variable from facts
   hosts: all
