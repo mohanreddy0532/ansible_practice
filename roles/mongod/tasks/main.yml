@@ -24,3 +24,13 @@
   ansible.builtin.import_role:
     name: common
     tasks_from: download
+
+- name: Load catalogue Schema
+  community.mongodb.mongodb_shell:
+    file: "/tmp/mongodb-main/catalogue.js"
+    idempotent: yes
+
+- name: Load user Schema
+  community.mongodb.mongodb_shell:
+    file: "/tmp/mongodb-main/users.js"
+    idempotent: yes
