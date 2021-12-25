@@ -8,12 +8,9 @@ fi
 COMPONENT=$1
 ENV=$2
 
-if [ ! -z "$ENV" ]
-
+if [ ! -z "$ENV" ]; then
    ENV="-${ENV}"
-
 fi
-
 
 TEMP_ID="lt-0371737b9b36fe546"
 TEMP_VER=1
