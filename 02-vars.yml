@@ -62,7 +62,7 @@
 
     - name: Print uptime output time
       ansible.builtin.debug:
-      msg: {{out}}
+      msg: "{{out}}"
 
 
 
