@@ -6,6 +6,12 @@ if [ -z "$1" ]; then
 fi
 
 COMPONENT=$1
+ENV=$2
+
+if [ ! -z "$ENV" ]
+   ENV="-${ENV}"
+fi
+
 
 TEMP_ID="lt-0371737b9b36fe546"
 TEMP_VER=1
@@ -33,10 +39,11 @@ aws route53 change-resource-record-sets --hosted-zone-id ${ZONE_ID} --change-bat
 }
 
 if [ "$COMPONENT" == "all" ]; then
-  for comp in frontend mongod catalogue ; do
+  for comp in frontend$ENV mongod$ENV catalogue$ENV ; do
     COMPONENT=$comp
     CREATE_INSTANCE
   done
 else
+  COMPONENT=$COMPONENT$ENV
   CREATE_INSTANCE
 fi
