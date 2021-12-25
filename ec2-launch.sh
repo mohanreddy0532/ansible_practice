@@ -39,7 +39,7 @@ sleep 10
 }
 
 if [ "$COMPONENT" == "all" ]; then
-  for comp in frontend mongodb catalogue redis user cart mysql shipping rabbitmq payment dispatch ; do
+  for comp in frontend mongodb catalogue ; do
     COMPONENT=$comp$ENV
     CREATE_INSTANCE
   done
