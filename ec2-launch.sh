@@ -33,7 +33,7 @@ aws route53 change-resource-record-sets --hosted-zone-id ${ZONE_ID} --change-bat
 }
 
 if [ "$COMPONENT" == "all" ]; then
-  for comp in frontend mongod user ; do
+  for comp in frontend mongod catalogue ; do
     COMPONENT=$comp
     CREATE_INSTANCE
   done

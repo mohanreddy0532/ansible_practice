@@ -10,11 +10,8 @@
   roles:
     - mongod
 
-#- name: MongoDB setup
-#  hosts: MONGODB
-#  become: yes
-#  roles:
-#    - mongodb
-#
-#
-##update
+- name: Catalogue setup
+  hosts: CATALOGUE
+  become: yes
+  roles:
+    - catalogue
