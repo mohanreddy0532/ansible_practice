@@ -8,6 +8,13 @@
   hosts: MONGODB
   become: yes
   roles:
-     - mongodb
+    - mongod
 
-#update
+#- name: MongoDB setup
+#  hosts: MONGODB
+#  become: yes
+#  roles:
+#    - mongodb
+#
+#
+##update
