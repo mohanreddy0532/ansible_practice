@@ -61,7 +61,7 @@
       register: out
 
     - name: Uptim outpu
-      ansible.builtin.shell:
+      ansible.builtin.debug:
       msg: "{{out}}"
 
 
