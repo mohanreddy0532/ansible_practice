@@ -64,19 +64,11 @@
       ansible.builtin.debug:
         msg: "{{out.stdout}}"
 
+    - name: declare set_fact variable
+      ansible.builtin.set_fact:
+      CMD_OUTPUT: "{{out.stdout}}"
 
-#- name: Register variables
-#  hosts: all
-#  tasks:
-#    - name: ls Command
-#      ansible.builtin.shell: uptime
-#      register: out
-#
-#    - name: Print ouptut
-#      ansible.builtin.debug:
-#        msg: "{{out.stdout}}"
-#
-#
+
 
 
 
