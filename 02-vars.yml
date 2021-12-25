@@ -11,7 +11,7 @@
 
 - name: Play for variable files
   hosts: all
-  vars_file:
+  vars_files:
     - sample-vars.yml
   tasks:
     - name: Print URL
