@@ -8,3 +8,12 @@
         msg: URL - {{URL}}
 
 #Since it is a play level variable all tasks can access
+
+- name: Play for variable files
+  hosts: all
+  vars_file:
+    - sample-vars.yml
+  tasks:
+    - name: Print URL
+      ansible.builtin.debug:
+        msg: URL - {{URL}}
