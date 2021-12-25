@@ -64,6 +64,10 @@
       ansible.builtin.debug:
         msg: "{{out.stdout}}"
 
+    - name: print ouutputt
+      ansible.builtin.debug:
+        msg: ""{{out}}"
+
 
 
 
