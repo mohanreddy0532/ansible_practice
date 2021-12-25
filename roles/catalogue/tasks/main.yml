@@ -24,7 +24,7 @@
   ansible.builtin.copy:
     src: /tmp/catalogue-main/
     dest: /home/roboshop/catalogue/
-  become_src: yes
+    remote_src: yes
   become_user: roboshop
 
 - name: Install NodeJS dependencies
