@@ -39,7 +39,7 @@ sleep 10
 }
 
 if [ "$COMPONENT" == "all" ]; then
-  for comp in frontend mongodb catalogue ; do
+  for comp in frontend mongodb catalogue redis; do
     COMPONENT=$comp$ENV
     CREATE_INSTANCE
   done
