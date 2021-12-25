@@ -20,7 +20,7 @@
     path: /home/roboshop/catalogue
     state: absent
 
-- name: Copy HTML files
+- name: Copy App Content
   ansible.builtin.copy:
     src: /tmp/catalogue-main/
     dest: /home/roboshop/catalogue/
