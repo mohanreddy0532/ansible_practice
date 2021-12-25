@@ -19,3 +19,8 @@
     name: mongod
     state: started
     enabled: yes
+
+- name: Download MongoDB Schema Files
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: download
