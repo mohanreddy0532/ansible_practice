@@ -68,7 +68,7 @@
   hosts: all
   tasks:
     - name: ls Command
-      ansible.builtin.shell: ls
+      ansible.builtin.shell: uptime
       register: out
 
     - name: Print ouptut
