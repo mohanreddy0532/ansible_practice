@@ -9,7 +9,9 @@ COMPONENT=$1
 ENV=$2
 
 if [ ! -z "$ENV" ]
+
    ENV="-${ENV}"
+
 fi
 
 
