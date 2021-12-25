@@ -13,7 +13,7 @@
 - name: Downlaod and unzip the catlogue content
   ansible.builtin.import_role:
     name: common
-    tasks_from: dowload
+    tasks_from: download
 
 - name: Remove Old App content
   ansible.builtin.file:
