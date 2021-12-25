@@ -61,7 +61,7 @@
       register: out
 
     - name: Print out put
-      ansible.builtin.debug:
+      ansible.builtin.shell:
       msg: "{{out}}"
 
 
