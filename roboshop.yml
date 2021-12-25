@@ -1,17 +1,20 @@
 - name: frontend setup
   hosts: FRONTEND
   become: yes
+  tags: FRONTEND
   roles:
     - frontend
 
 - name: MongoDB setup
   hosts: MONGODB
   become: yes
+  tags: MONGODB
   roles:
     - mongodb
 
 - name: Catalogue setup
   hosts: CATALOGUE
   become: yes
+  tags: CATALOGUE
   roles:
     - catalogue

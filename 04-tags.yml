@@ -1,0 +1,6 @@
+#TO run a particular job only and avoid re-run all again and agina
+
+- name: Tags demo
+  hosts: localhost
+  tasks:
+
