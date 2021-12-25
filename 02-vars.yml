@@ -53,27 +53,27 @@
 #      ansible.builtin.debug:
 #        msg: Hostname - {{ansible_system}}
 
-#- name: Register variable
-#  hosts: all
-#  tasks:
-#    - name: Uptime commans
-#      ansible.builtin.shell: uptime
-#      register: out
-#
-#    - name: Print uptime output time
-#      ansible.builtin.debug:
-#      msg: "{{out}}"
-
-- name: Register variables
+- name: Register variable
   hosts: all
   tasks:
-    - name: ls Command
+    - name: Uptime commans
       ansible.builtin.shell: uptime
       register: out
 
     - name: Print ouptut
       ansible.builtin.debug:
         msg: "{{out.stdout}}"
+
+#- name: Register variables
+#  hosts: all
+#  tasks:
+#    - name: ls Command
+#      ansible.builtin.shell: uptime
+#      register: out
+#
+#    - name: Print ouptut
+#      ansible.builtin.debug:
+#        msg: "{{out.stdout}}"
 
 
 
