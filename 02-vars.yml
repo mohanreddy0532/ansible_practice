@@ -60,10 +60,9 @@
       ansible.builtin.shell: uptime
       register: out
 
-    - name: Print optime output
+    - name: Print uptime output time
       ansible.builtin.debug:
-      msg: "{{out}}"
-
+      msg: {{out}}
 
 
 
