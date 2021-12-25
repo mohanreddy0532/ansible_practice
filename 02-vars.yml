@@ -60,9 +60,10 @@
       ansible.builtin.shell: uptime
       register: out
 
-    - name: Print uptime output timew
-      ansible.builtin.debug:
+    - name: Print uptime out
+      ansibble.builtin.debug:
       msg: "{{out}}"
+
 
 #- name: Register variables
 #  hosts: all
