@@ -46,9 +46,16 @@
       ansible.builtin.debug:
         msg: URL - {{URL}}
 
-- name: Variables frmmm Facts
+#- name: Variables frmmm Facts
+#  hosts: all
+#  tasks:
+#    - name: Print fact
+#      anisible.builtin.debug:
+#        msg: Hostname - {{ansible_fqdn}}
+
+- name: Variable from facts
   hosts: all
   tasks:
     - name: Print fact
-      anisible.builtin.debug:
+      ansible.builtin.debug:
         msg: Hostname - {{ansible_fqdn}}
