@@ -46,7 +46,7 @@
       ansible.builtin.debug:
         msg: URL - {{URL}}
 
-- name: Variables from Fact
+- name: Variables from Facts
   hosts: all
   tasks:
     - name: Print fact
