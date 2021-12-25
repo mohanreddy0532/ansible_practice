@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -z "$1" ]; then
-  echo "Input is Missing"
+  echo -e "\e[1;31mInput is Missing\e[0m"
   exit 1
 fi
 
@@ -13,7 +13,7 @@ TEMP_VER=1
 
 aws ec2 describe-instances --filters "Name=tag:Name,Values=${COMPONENT}" | jq .Reservations[].Instances[].State.Name | sed 's/"//g' | grep -E 'running|stopped' &>/dev/null
 if [ $? -eq 0 ]; then
-  echo "Instance Already there,please check"
+  echo -e "\e[1;32mInstance Already there,please check\e[0m"
   exit
 fi
 
