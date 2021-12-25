@@ -45,10 +45,42 @@
 #    - name: Print URL1
 #      ansible.builtin.debug:
 #        msg: URL - {{URL}}
+#
+#- name: Variable from facts
+#  hosts: all
+#  tasks:
+#    - name: Print fact
+#      ansible.builtin.debug:
+#        msg: Hostname - {{ansible_system}}
 
-- name: Variable from facts
+- name: Register variable
   hosts: all
   tasks:
-    - name: Print fact
-      ansible.builtin.debug:
-        msg: Hostname - {{ansible_system}}
+    - name: Uptime commans
+      ansible.builtin.shell: uptime
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
