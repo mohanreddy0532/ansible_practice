@@ -10,7 +10,7 @@ ZONE_ID=Z079880618UTU9V8KYVX0
 
   # Update the DNS record
  # sed -e "s/IPADDRESS/${IPADDRESS}/" -e "s/COMPONENT/${COMPONENT}/" record_delete.json >/tmp/record_delete.json
-  aws route53 change-resource-record-sets --hosted-zone-id ${ZONE_ID} --change-batch=record_delete.json | jq
+  aws route53 change-resource-record-sets --hosted-zone-id ${ZONE_ID} --change-batch A | jq
 
   sleep 20
   #delete ec2
