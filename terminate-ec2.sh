@@ -10,7 +10,8 @@ IPADDRESS=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=${COMPONE
 
   # Update the DNS record
   sed -e "s/IPADDRESS/${IPADDRESS}/" -e "s/COMPONENT/${COMPONENT}/" record_delete.json >/tmp/record_delete.json
-  aws route53 change-resource-record-sets --hosted-zone-id ${ZONE_ID} --change-batch file:///tmp/record_delete.json | jq
+  aws route53 change-resource-record-sets --change-batch file:///tmp/record_delete.json | jq
+  #removed --hosted-zone-id ${ZONE_ID}
 
   sleep 20
   #delete ec2
