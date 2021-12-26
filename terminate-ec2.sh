@@ -13,5 +13,5 @@ IPADDRESS=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=${COMPONE
   aws route53 change-resource-record-sets --hosted-zone-id ${ZONE_ID} --change-batch file:///tmp/record_delete.json | jq
 
   sleep 20
-
+  #delete ec2
   #aws ec2 terminate-instances --instance-ids $ids
