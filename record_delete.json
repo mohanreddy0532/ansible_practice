@@ -3,6 +3,7 @@
   "Changes": [{
     "Action": "DELETE",
     "ResourceRecordSet": {
+      "Name": "*.roboshop.internal",
       "Type": "A",
       "TTL": 300,
       "ResourceRecords": [{ "Value": "IPADDRESS"}]
